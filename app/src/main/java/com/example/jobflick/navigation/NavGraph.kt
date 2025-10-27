@@ -106,5 +106,9 @@ fun NavGraph(
                 }
             )
         }
+
+        composable(Routes.HOME) {
+            // TODO: add HomeScreen()
+        }
     }
 }
