@@ -38,12 +38,18 @@ private val bottomNavItems = listOf(
         activeIconRes = R.drawable.roadmap_active_navbar,
         inactiveIconRes = R.drawable.roadmap_inactive_navbar
     ),
+//    BottomNavItem(
+//        route = Routes.MESSAGE,
+//        label = "Message",
+//        activeIconRes = R.drawable.message_active_navbar,
+//        inactiveIconRes = R.drawable.message_inactive_navbar
+//    ),
    BottomNavItem(
-       route = Routes.MESSAGE,
-       label = "Message",
-       activeIconRes = R.drawable.message_active_navbar,
-       inactiveIconRes = R.drawable.message_inactive_navbar
-   ),
+        route = Routes.PROFILE,
+        label = "Profile",
+        activeIconRes = R.drawable.profile_active_navbar,
+        inactiveIconRes = R.drawable.profile_inactive_navbar
+    ),
 )
 @Composable
 fun BottomNavBar(
