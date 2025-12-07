@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.sp
 import com.example.jobflick.R
 import com.example.jobflick.core.ui.theme.BluePrimary
 import com.example.jobflick.core.ui.theme.GrayInactive
-import com.example.jobflick.navigation.Routes
 
 data class BottomNavItem(
     val route: String,
