@@ -11,15 +11,17 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.put
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonPrimitive
 
 class PocketBaseHttp(
     private val baseUrl: String,
-    private var authToken: String? = null,
+    private var authToken: String? = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2xsZWN0aW9uSWQiOiJfcGJfdXNlcnNfYXV0aF8iLCJleHAiOjE3NjQ4OTUyMzYsImlkIjoiMTkxeGtvOGFvMHo4dzFlIiwicmVmcmVzaGFibGUiOnRydWUsInR5cGUiOiJhdXRoIn0.MTyeOJGbYRuSLALY6fz9V8u9ESM1J8tTu5tR8MBEpt0",
 ) {
     internal val json = Json { ignoreUnknownKeys = true; encodeDefaults = true }
 

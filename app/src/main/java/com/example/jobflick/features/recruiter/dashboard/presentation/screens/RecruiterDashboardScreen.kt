@@ -26,6 +26,7 @@ import com.example.jobflick.core.ui.theme.Jost
 import com.example.jobflick.core.ui.theme.OrangePrimary
 import com.example.jobflick.features.recruiter.dashboard.domain.model.RecruiterJobSummary
 import com.example.jobflick.features.recruiter.dashboard.presentation.RecruiterDashboardUiState
+import com.example.jobflick.navigation.Routes
 
 @Composable
 fun RecruiterDashboardScreen(

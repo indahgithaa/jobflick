@@ -14,45 +14,40 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.jobflick.R
-import com.example.jobflick.core.ui.theme.BluePrimary
 import com.example.jobflick.core.ui.theme.GrayInactive
+import com.example.jobflick.core.ui.theme.OrangePrimary
 import com.example.jobflick.navigation.Routes
 
-data class BottomNavItem(
+data class RecruiterBottomNavItem(
     val route: String,
     val label: String,
     val activeIconRes: Int,
     val inactiveIconRes: Int,
 )
 
-private val bottomNavItems = listOf(
-    BottomNavItem(
-        route = Routes.DISCOVER,
+private val recruiterBottomNavItems = listOf(
+    RecruiterBottomNavItem(
+        route = Routes.RECRUITER_DASHBOARD,
+        label = "Dashboard",
+        activeIconRes = R.drawable.dashboard_recruiter_active,
+        inactiveIconRes = R.drawable.dashboard_recruiter_inactive
+    ),
+    RecruiterBottomNavItem(
+        route = Routes.RECRUITER_DISCOVER,
         label = "Discover",
-        activeIconRes = R.drawable.discover_active_navbar,
-        inactiveIconRes = R.drawable.discover_inactive_navbar
+        activeIconRes = R.drawable.discover_recruiter_active,
+        inactiveIconRes = R.drawable.discover_inactive_navbar,
     ),
-    BottomNavItem(
-        route = Routes.ROADMAP,
-        label = "Roadmap",
-        activeIconRes = R.drawable.roadmap_active_navbar,
-        inactiveIconRes = R.drawable.roadmap_inactive_navbar
-    ),
-//    BottomNavItem(
-//        route = Routes.MESSAGE,
-//        label = "Message",
-//        activeIconRes = R.drawable.message_active_navbar,
-//        inactiveIconRes = R.drawable.message_inactive_navbar
-//    ),
-    BottomNavItem(
-        route = Routes.PROFILE,
+    RecruiterBottomNavItem(
+        route = Routes.RECRUITER_PROFILE,
         label = "Profile",
-        activeIconRes = R.drawable.profile_active_navbar,
-        inactiveIconRes = R.drawable.profile_inactive_navbar
+        activeIconRes = R.drawable.profile_recruiter_active,
+        inactiveIconRes = R.drawable.profile_inactive_navbar,
     ),
 )
+
 @Composable
-fun BottomNavBar(
+fun RecruiterBottomNavBar(
     currentRoute: String?,
     onItemSelected: (String) -> Unit,
 ) {
@@ -67,7 +62,7 @@ fun BottomNavBar(
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            bottomNavItems.forEach { item ->
+            recruiterBottomNavItems.forEach { item ->
                 val isSelected = currentRoute == item.route
 
                 Column(
@@ -76,14 +71,12 @@ fun BottomNavBar(
                         .padding(vertical = 2.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-
                     Image(
                         painter = painterResource(
                             id = if (isSelected) item.activeIconRes else item.inactiveIconRes
                         ),
                         contentDescription = item.label,
-                        modifier = Modifier
-                            .size(24.dp)
+                        modifier = Modifier.size(24.dp)
                     )
 
                     Spacer(modifier = Modifier.height(2.dp))
@@ -92,7 +85,7 @@ fun BottomNavBar(
                         text = item.label,
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal,
-                        color = if (isSelected) BluePrimary else GrayInactive
+                        color = if (isSelected) OrangePrimary else GrayInactive
                     )
                 }
             }
