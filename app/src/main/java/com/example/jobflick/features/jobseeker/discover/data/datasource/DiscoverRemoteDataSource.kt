@@ -78,4 +78,3 @@ class DiscoverRemoteDataSource(
         pb.create(jobCategoriesCollection, body)
     }
 }
-
