@@ -265,4 +265,3 @@ class RoadmapRemoteDataSource(
         pb.create(articleProgressCollection, data)
     }
 }
-
